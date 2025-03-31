@@ -1,0 +1,13 @@
+ercise
+You are required to write a server program that continuously handles incoming external requests.
+The program should create a parent process and N child processes. Requests arrive through the standard input of the parent process.
+Each request is represented by a single character (byte) and must be processed by calling the pre-defined function:
+void process_request(char c);
+Each process (parent and children) must take turns to read and handle one request at a time, ensuring that only one process handles each request per turn.
+To maximize concurrency, a process must pass the reading turn to the next process as soon as possible.
+
+a) Write the program ensuring a predetermined turn order, rotating among the N+1 processes in a circular fashion indefinitely.
+Hint: Use signals to pass the turn to the next process. Assume that when a signal handler A is executed, signal A is automatically masked by the OS during its handling.
+
+b) Write the program without a fixed turn order, allowing any process to handle the next request.
+c) Explain the advantages and disadvantages of both solutions.
