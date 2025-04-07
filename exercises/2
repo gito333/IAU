@@ -1,0 +1,6 @@
+Goal: Write a program that creates two processes: a producer and a consumer.
+Producer Task: Opens the file /tmp/datos.txt and reads the characters stored in it.
+Consumer Task: Calculates and prints to standard output the number of characters stored in that file, without reading the file directly.
+Communication: Communication between the two processes must use a pipe.
+Parent Task: The parent process must abort the execution of both child processes (producer and consumer)
+  if they have not finished their execution after 60 seconds have passed.

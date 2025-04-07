@@ -1,0 +1,9 @@
+Part a:
+Goal: Create a program where a main process forks N child processes.
+Communication: Children communicate with the parent using a single pipe. Only children write to it, only the parent reads from it.
+Timing & Signaling: T seconds after creating all child processes, the parent sends the SIGUSR1 signal to each child.
+Child Action: Upon receiving SIGUSR1, each child writes its unique sequence number (0, 1, ..., N-1) as a single character ('0', '1', etc.) to the pipe and then terminates. (Assume N < 11 for simplicity, so '0' through '9' covers it).
+Parent Action: After signaling the children, the parent reads all the characters (N of them) from the pipe and then terminates.
+Constants: N and T should be defined as constants within the program.
+Part b:
+Modification: Change the program from Part a) so that the T-second timer starts before the parent begins creating the child processes.
