@@ -1,0 +1,14 @@
+u) How many processes does this program generate? What are the parent-child relationships between them?
+v) What do statements A and B do? How many and which processes do these statements affect?
+w) Which processes write to pipe_datos? Which processes read from pipe_datos? Which processes write to pipe_pid?
+ Which processes read from pipe_pid?
+x) Note that statement D causes the last child N-1 to start its execution by invoking function f1.
+   Which processes send the SIGUSR1 signal? Towards which processes are they directed? How many SIGUSR1 
+    signals are sent in total?
+y) Which process writes first to pipe_pid? What data does it write? Which process reads that data?
+z) Note that the variable pid_aux is global. It is assigned in function f1 and used in function f2.
+   After processing the last SIGUSR1 signal, what data does the variable pid_aux of each child process contain?
+aa) Which processes send the SIGUSR2 signal? Towards which processes are they directed? How many SIGUSR2 signals are sent in total?
+ab) Which process sends the first signal? And the last signal?
+ac) Just before the parent process terminates, what data does the pipe_pid file contain? (Note: "fichero de pipe_pid" translates literally to "pipe_pid file", referring to the pipe itself)
+ad) What sequence of characters does the parent process read in the final loop (statement C)?
