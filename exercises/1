@@ -1,13 +1,14 @@
 Overall Goal: We want to develop an application that executes files found in a series of directories. All files within these directories are assumed to be executable.
 Step a): Write a program that creates four processes, logically named 0, 1, 2, and 3. These four processes must communicate using a single pipe. 
-  One process (e.g., process 0) will execute the code of a function called Ejecutar(), and the rest (processes 1, 2, and 3) will execute a function called Distribuir().
+  One process (e.g., process 0) will execute the code of a function called execute(), and the rest (processes 1, 2, and 3) will execute a function called distribute().
   The code for these functions is described in the following sections.
-Step b): The Distribuir() function in process i will open the directory named "directorio_i" and read its entries (all entries refer to executable filenames).
+Step b): The distrivute() function in process i will open the directory named "directorio_i" and read its entries (all entries refer to executable filenames).
   Each time it reads an entry, it will send the filename, using the pipe created in step a), to the process running the Ejecutar() function. 
-  When the process running Distribuir() reaches the end of the directory, it finishes its execution. Write the code for the Distribuir() function for process i.
-Step c): The process executing the Ejecutar() function will read filenames from the pipe that connects it with the other processes. 
+  When the process running distribute() reaches the end of the directory, it finishes its execution. Write the code for the Distribuir() function for process i.
+Step c): The process executing the execute() function will read filenames from the pipe that connects it with the other processes. 
   Each time it reads a filename, it executes the file (remember, all files in the directories are executable), waiting for its execution to finish.
-  This process finishes its work when all the processes executing the Distribuir() function have finished. Write the code for the Ejecutar() function.
+  This process finishes its work when all the processes executing the distribute() function have finished. Write the code for the Ejecutar() function.
   Is there any potential problem with how this process reads from the pipe?
 Note: For this exercise, assume all filenames are exactly 20 characters long,
 and all directories are located within the directories specified in the PATH environment variable (this simplifies execution, as execlp or execvp can be used).
+dirent.h
